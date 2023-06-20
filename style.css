@@ -20,6 +20,9 @@ p{
     margin: 20px 0px;
 }
 
-#main{
-    display: block;
+.third-paragraph {
+    font-style: italic;
+    text-align: center;
+    font-size: 24px;
+    text-shadow: green 1px 0 10px;
 }
