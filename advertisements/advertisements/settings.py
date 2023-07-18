@@ -58,7 +58,7 @@ ROOT_URLCONF = 'advertisements.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [Path.joinpath(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'advertisements.wsgi.application'
-
+STATICFILES_DIRS = [Path.joinpath(BASE_DIR, 'static')]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
