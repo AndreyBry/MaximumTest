@@ -15,39 +15,38 @@
 <body>
 <ul class="nav nav-pills sticky-top bg-white nav-fill">
   <li class="nav-item">
-    {% block nav-main %}
-    <a class="nav-link" aria-current="page" href="{% url 'index' %}"><span style="font-weight: bold;">Главная</span></a>
-    {% endblock %}
+	    {% block nav-main %}
+	    <a class="nav-link" aria-current="page" href="{% url 'index' %}"><span style="font-weight: bold;">Главная</span></a>
+	    {% endblock %}
   </li>
   <li class="nav-item">
-    {% block nav-top-sellers %}
-    <a class="nav-link" href="{% url 'top-sellers' %}"><span style="font-weight: bold;">Топ продавцов</span></a>
-    {% endblock %}
+	    {% block nav-top-sellers %}
+	    <a class="nav-link" href="{% url 'top-sellers' %}"><span style="font-weight: bold;">Топ продавцов</span></a>
+	    {% endblock %}
   </li>
   <li class="nav-item">
-    {% block nav-advertisement-post %}
-    <a class="nav-link" href="{% url 'advertisement-post' %}"><span style="font-weight: bold;">Разместить объявление</span></a>
-    {% endblock %}
+	    {% block nav-advertisement-post %}
+	    <a class="nav-link" href="{% url 'advertisement-post' %}"><span style="font-weight: bold;">Разместить объявление</span></a>
+	    {% endblock %}
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="register">
-      <span style="font-weight: bold;">Регистрация</span>
+	    {% block nav-register %}
+	    <a class="nav-link" href="{% url 'register' %}"><span style="font-weight: bold;">Регистрация</span></a>
+	    {% endblock %}
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="login">
-      <span style="font-weight: bold;">Войти</span>
-    </a>
+	    {% block nav-login %}
+	    <a class="nav-link" href="{% url 'login' %}"><span style="font-weight: bold;">Войти</span></a>
+	    {% endblock %}
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="profile">
-      <span style="font-weight: bold;">Профиль</span>
-    </a>
+	    {% block nav-profile %}
+	    <a class="nav-link" href="{% url 'profile' %}"><span style="font-weight: bold;">Профиль</span></a>
+	    {% endblock %}
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">
-      <span style="font-weight: bold;">Выйти</span>
-    </a>
+	    <a class="nav-link" href="{% url 'index' %}"><span style="font-weight: bold;">Выйти</span></a>
   </li>
 </ul>
 
