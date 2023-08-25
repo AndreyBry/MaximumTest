@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Profile {% endblock %}
+{% block title %} Профиль {% endblock %}
 
 {% block nav-profile %}
 <a class="nav-link active" href="{% url 'profile' %}"><span style="font-weight: bold;">Профиль</span></a>
@@ -9,8 +9,8 @@
 
 {% block content %}
 <div class="col" style="margin: 50px;">
-  <div class="display-2">
-    <span class="badge bg-primary">Сейчас вы находитесь на сайте под ником "username".</span>
-  </div>
+	<div class="display-2">
+		<span class="badge bg-primary">Сейчас вы находитесь на сайте под ником "username".</span>
+	</div>
 </div>
 {% endblock %}
