@@ -30,6 +30,7 @@
 				style="font-weight: bold;">Разместить объявление</span></a>
 		{% endblock %}
 	</li>
+	{% if not user.is_authenticated %}
 	<li class="nav-item">
 		{% block nav-register %}
 		<a class="nav-link" href="{% url 'register' %}"><span style="font-weight: bold;">Регистрация</span></a>
@@ -41,14 +42,17 @@
 		<a class="nav-link" href="{% url 'login' %}"><span style="font-weight: bold;">Войти</span></a>
 		{% endblock %}
 	</li>
+	{% endif %}
+	{% if user.is_authenticated %}
 	<li class="nav-item">
 		{% block nav-profile %}
 		<a class="nav-link" href="{% url 'profile' %}"><span style="font-weight: bold;">Профиль</span></a>
 		{% endblock %}
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="{% url 'index' %}"><span style="font-weight: bold;">Выйти</span></a>
+		<a class="nav-link" href="{% url 'logout' %}"><span style="font-weight: bold;">Выйти</span></a>
 	</li>
+	{% endif %}
 </ul>
 
 {% block content %}

@@ -12,19 +12,21 @@ from .models import Advertisement
 #     image = forms.ImageField(widget=forms.FileInput(attrs={'class': 'form-control from-control-lg'}))
 
 class AdvertisementForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title'].widget.attrs['class'] = 'form-control from-control-lg'
+        self.fields['description'].widget.attrs['class'] = 'form-control from-control-lg'
+        self.fields['price'].widget.attrs['class'] = 'form-control from-control-lg'
+        self.fields['auction'].widget.attrs['class'] = 'form-check-input'
+        self.fields['auction'].required = False
+        self.fields['image'].widget.attrs['class'] = 'form-control from-control-lg'
+
     class Meta:
         model = Advertisement
-        fields = ['title', 'description', 'price', 'auction', 'image']
-        widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control from-control-lg'}),
-            'description': forms.Textarea(attrs={'class': 'form-control from-control-lg'}),
-            'price': forms.NumberInput(attrs={'class': 'form-control from-control-lg'}),
-            'auction': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'image': forms.FileInput(attrs={'class': 'form-control from-control-lg'})
-        }
+        fields = ('title', 'description', 'price', 'auction', 'image')
 
     def clean_title(self):
-        data = self.cleaned_data['title']
-        if data.startswith('?'):
+        title = self.cleaned_data['title']
+        if title.startswith('?'):
             raise ValidationError("Заголовок не может начинаться с вопросительного знака")
-        return data
+        return title
